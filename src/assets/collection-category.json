@@ -160,15 +160,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3002/cotegories/2",
+					"raw": "http://localhost:3002/categories/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3002",
 					"path": [
-						"cotegories",
-						"2"
+						"categories",
+						"5"
 					]
 				},
 				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
