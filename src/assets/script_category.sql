@@ -18,31 +18,27 @@ USE `recipe_management`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `recipes`
+-- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `recipes`;
+DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `recipes` (
+CREATE TABLE `categories` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) NOT NULL,
-  `type` varchar(10) NOT NULL,
-  `ingredients` text NOT NULL,
-  `category_id` int NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_category` (`category_id`)
+  `name` text NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `recipes`
+-- Dumping data for table `categories`
 --
 
-LOCK TABLES `recipes` WRITE;
-/*!40000 ALTER TABLE `recipes` DISABLE KEYS */;
-INSERT INTO `recipes` VALUES (1,'Salade César','entrée','Laitue, Poulet, Croutons, Parmesan, Sauce César',1),(2,'Pâtes Carbonara','plat','Pâtes, Crème, Lardons, Parmesan, Oeufs',2),(3,'Tiramisu','dessert','Mascarpone, Café, Biscuits à la cuillère, Cacao, Oeufs',3),(4,'Salade de fruits','dessert','Pommes, Bananes, Oranges, Fraises, Jus de citron',4),(5,'Soupe à l\'oignon','entrée','Oignons, Bouillon, Pain grillé, Fromage râpé',5);
-/*!40000 ALTER TABLE `recipes` ENABLE KEYS */;
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Italienne'),(2,'Mexicaine'),(3,'Japonaise'),(4,'Indienne'),(5,'Française');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-08 11:50:10
+-- Dump completed on 2024-10-09  1:04:41
