@@ -9,13 +9,14 @@ describe("Recipe Model Tests", () => {
       title: "Mafédoom",
       type: "dessert",
       ingredients: "sel, eau, ll",
+      category_id: categoryId, // Ajout de la propriété category_id
     };
 
     recipeId = await Recipe.createRecipe(
       recipe.title,
       recipe.type,
       recipe.ingredients,
-      categoryId,
+      recipe.category_id, // Ajout de category_id ici aussi
     );
     const recipeCreated = await Recipe.getRecipes();
     const createdRecipe = recipeCreated.find((r) => r.id === recipeId);
@@ -25,7 +26,7 @@ describe("Recipe Model Tests", () => {
     expect(createdRecipe.title).toBe(recipe.title);
     expect(createdRecipe.type).toBe(recipe.type);
     expect(createdRecipe.ingredients).toBe(recipe.ingredients);
-    expect(createdRecipe.category_id).toBe(categoryId);
+    expect(createdRecipe.category_id).toBe(recipe.category_id); // Vérification du category_id
   });
 
   it("can retrieve all recipes", async () => {
@@ -40,6 +41,7 @@ describe("Recipe Model Tests", () => {
       title: "Updated Mafé",
       type: "plat",
       ingredients: "sel, eau, riz",
+      category_id: categoryId, // Ajout de category_id lors de la mise à jour
     };
 
     const result = await Recipe.updateRecipe(
@@ -47,6 +49,7 @@ describe("Recipe Model Tests", () => {
       updatedRecipe.title,
       updatedRecipe.type,
       updatedRecipe.ingredients,
+      updatedRecipe.category_id, // Mise à jour du category_id
     );
     const updatedRecipeFromDb = await Recipe.getRecipes();
     const updatedRecipeObj = updatedRecipeFromDb.find((r) => r.id === recipeId);
@@ -55,6 +58,7 @@ describe("Recipe Model Tests", () => {
     expect(updatedRecipeObj.title).toBe(updatedRecipe.title);
     expect(updatedRecipeObj.type).toBe(updatedRecipe.type);
     expect(updatedRecipeObj.ingredients).toBe(updatedRecipe.ingredients);
+    expect(updatedRecipeObj.category_id).toBe(updatedRecipe.category_id); // Vérification du category_id
   });
 
   it("can delete a recipe", async () => {

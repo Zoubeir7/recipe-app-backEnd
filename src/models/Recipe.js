@@ -37,12 +37,12 @@ class Recipe {
     }
   }
 
-  static async updateRecipe(id, title, type, ingredients) {
+  static async updateRecipe(id, title, type, ingredients, categoryId) {
     const connection = await pool.getConnection();
     try {
       await connection.execute(
-        'UPDATE recipes SET title = ?, type = ?, ingredients = ? WHERE id = ?',
-        [title, type, ingredients, id],
+        'UPDATE recipes SET title = ?, type = ?, ingredients = ?, category_id =? WHERE id = ?',
+        [title, type, ingredients, categoryId, id],
       );
       return true;
     } finally {
