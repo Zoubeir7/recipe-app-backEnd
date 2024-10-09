@@ -84,16 +84,23 @@ const updateRequestValidator = [
       }
       return true;
     }),
+
   check('title')
     .notEmpty()
-    .withMessage('Le titre ne doit pas être vide!')
+    .withMessage('Titre ne doit pas être vide')
     .bail()
-    .isLength({ min: 5, max: 100 })
-    .withMessage('Le titre doit comporter entre 5 et 100 caractères!')
+    .isLength({ min: 5 })
+    .withMessage('Minimum 5 caractères requis!')
     .bail()
-    .custom(async (value) => {
-      const count = await Recipe.checkRecipe(value);
-      if (count > 0) {
+    .isLength({ max: 100 })
+    .withMessage('Maximum 100 caractères limite!')
+    .bail()
+    .custom(async (value, { req }) => {
+      const id = req.params.id;
+      console.log(req.params.id);
+      const result = await Recipe.checkRecipe(value, id);
+      console.log(result);
+      if (result.length !== 0) {
         throw new Error('Cette recette existe déjà!');
       }
       return true;

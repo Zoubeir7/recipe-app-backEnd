@@ -60,18 +60,28 @@ class Recipe {
     }
   }
 
-  static async checkRecipe(title) {
-    const connection = await pool.getConnection();
+  static async checkRecipe(title, id = null) {
     try {
-      const [result] = await connection.execute(
-        'SELECT COUNT(*) as count FROM recipes WHERE title = ?',
-        [title],
-      );
-      return result[0].count;
+      if (id) {
+        const connection = await pool.getConnection();
+        const [result] = await connection.execute(
+          'select id, title from recettes where title = ? and id != ?',
+          [title, id]
+        );
+        return result;
+      } else {
+        const connection = await pool.getConnection();
+        const [result] = await connection.execute(
+          'select id, title from recettes where title = ?',
+          [title]
+        );
+        return result;
+      }
     } finally {
-      connection.release();
+      pool.releaseConnection();
     }
   }
+
 
   static async existsById(id) {
     const connection = await pool.getConnection();
