@@ -90,7 +90,7 @@ Dans le dossier vous trouverez deux collections `/assets/collection-recipe.jon &
   ```json
   {
     "title": "Titre de la Recette",
-    "ingredient": "Liste des Ingrédients",
+    "ingredients": "Liste des Ingrédients",
     "type": "Type de Recette",
     "category_id":"1"
   }
@@ -107,7 +107,7 @@ Dans le dossier vous trouverez deux collections `/assets/collection-recipe.jon &
   ```json
   {
     "title": "Titre Mis à Jour",
-    "ingredient": "Liste des Ingrédients Mise à Jour",
+    "ingredients": "Liste des Ingrédients Mise à Jour",
     "type": "Type de Recette Mis à Jour",
     "category_id":"1"
   }
