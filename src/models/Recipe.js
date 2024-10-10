@@ -65,14 +65,14 @@ class Recipe {
       if (id) {
         const connection = await pool.getConnection();
         const [result] = await connection.execute(
-          'select id, title from recettes where title = ? and id != ?',
+          'select id, title from recipes where title = ? and id != ?',
           [title, id]
         );
         return result;
       } else {
         const connection = await pool.getConnection();
         const [result] = await connection.execute(
-          'select id, title from recettes where title = ?',
+          'select id, title from recipes where title = ?',
           [title]
         );
         return result;
@@ -81,7 +81,6 @@ class Recipe {
       pool.releaseConnection();
     }
   }
-
 
   static async existsById(id) {
     const connection = await pool.getConnection();
