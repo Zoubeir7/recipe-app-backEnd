@@ -170,9 +170,7 @@ Dans le dossier vous trouverez deux collections `/assets/collection-recipe.jon &
 
 ## Tests Unitaires
 
-- tests unitaires pour notre modèle afin de vérifier que les actions CRUD fonctionnent correctement.
-
-la commande pour exécuter les tests :
+- Executer la commande suivante pour tests unitaires pour notre modèle afin de vérifier que les actions CRUD fonctionnent correctement.
 
 ```bash
 npm test
@@ -180,7 +178,7 @@ npm test
 
 ## Analyse & Formatage du Code 
 
-- Executer ESLint pour l'analyse statique du code
+- Executer ESLint pour l'analyse statique du code.
 
 ```bash
 npm run lint
