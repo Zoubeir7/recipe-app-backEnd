@@ -89,12 +89,11 @@ Dans le dossier vous trouverez deux collections `/assets/collection-recipe.jon &
   ```json
   {
     "title": "Titre de la Recette",
-    "ingredients": "Liste des Ingrédients",
     "type": "Type de Recette",
+    "ingredients": "Liste des Ingrédients",
     "category_id":"1"
   }
   ```
-
 - **Réponse :** Retourne l'ID de la recette nouvellement créée.
 
 4.**Mettre à Jour une Recette par ID**
@@ -106,12 +105,11 @@ Dans le dossier vous trouverez deux collections `/assets/collection-recipe.jon &
   ```json
   {
     "title": "Titre Mis à Jour",
-    "ingredients": "Liste des Ingrédients Mise à Jour",
     "type": "Type de Recette Mis à Jour",
+    "ingredients": "Liste des Ingrédients Mise à Jour",
     "category_id":"1"
   }
   ```
-
 - **Réponse :** Confirmation de la mise à jour réussie ou une erreur 404 si non trouvé.
 
 5.**Supprimer une Recette par ID**
@@ -145,7 +143,6 @@ Dans le dossier vous trouverez deux collections `/assets/collection-recipe.jon &
     "name": "nom de la Categorie"
   }
   ```
-
 - **Réponse :** Retourne l'ID de la categorie nouvellement créée.
 
 4.**Mettre à Jour une Recette par ID**
@@ -159,7 +156,6 @@ Dans le dossier vous trouverez deux collections `/assets/collection-recipe.jon &
     "name": "nom Mis à jour"
   }
   ```
-
 - **Réponse :** Confirmation de la mise à jour réussie ou une erreur 404 si non trouvé.
 
 5.**Supprimer une Categorie par ID**
